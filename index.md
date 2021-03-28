@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+# PiShrink
+Backup and shrink your raspberry pi os directly from sd card.
 
-You can use the [editor on GitHub](https://github.com/ammababoi/PiShrink/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Installation
+```
+wget https://raw.githubusercontent.com/ammababoi/PiShrink/main/pishrink && sudo chmod +x pishrink && sudo cp pishrink /usr/bin/ && sudo apt install pv -y
+```
+## Usage
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Know your device name
+```
+df -h
+```
+now extract the device name
 
-### Markdown
+example 1 for list entries like:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+/dev/sda1 + /dev/sda2
 
-```markdown
-Syntax highlighted code block
+remove digit at the end
 
-# Header 1
-## Header 2
-### Header 3
+result:
 
-- Bulleted
-- List
+/dev/sda
 
-1. Numbered
-2. List
+example 2 for list entries like:
 
-**Bold** and _Italic_ and `Code` text
+/dev/nvme0n1p6 + /dev/nvme0n1p1
 
-[Link](url) and ![Image](src)
+remove p and digit at the end
+
+result:
+
+/dev/nvme0n1
+
+Run command
+
+```
+sudo pishrink device /dev/{your sd card name}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Example
+```
+sudo pishrink device /dev/sda
+```
 
-### Jekyll Themes
+## This repository was inspired from
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ammababoi/PiShrink/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[pishrink](https://github.com/Drewsif/PiShrink) and [shrink](https://github.com/qrti/shrink)
