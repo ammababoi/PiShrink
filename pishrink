@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 SHRINK_VERSION="V0.0"
 
 trap 'echo "Aborting due to errexit on line $LINENO. Exit code: $?" >&2' ERR
