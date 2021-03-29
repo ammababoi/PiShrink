@@ -3,7 +3,7 @@ Backup and shrink your raspberry pi os directly from sd card.
 
 ## Installation
 ```
-wget https://raw.githubusercontent.com/ammababoi/PiShrink/main/pishrink && sudo chmod +x pishrink && sudo cp pishrink /usr/bin/ && sudo apt install pv -y
+wget https://raw.githubusercontent.com/ammababoi/PiShrink/main/pishrink && sudo chmod +x pishrink && sudo mv pishrink /usr/bin/ && sudo apt install pv -y
 ```
 ## Usage
 
