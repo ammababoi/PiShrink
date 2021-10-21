@@ -1,5 +1,5 @@
 # PiShrink
-Backup and shrink your raspberry pi os directly from sd card.
+***Backup and shrink your raspberry pi os directly from sd card.***
 
 ## Installation
 ```
